@@ -21,9 +21,12 @@ def generate_key():
     third_digit = dec_str[2]
     last_two_digits = dec_str[-2:]
 
-    block1 = f"{first_digit}{''.join(random.choices(string.ascii_uppercase + string.digits, k=4))}"
-    block2 = f"{second_digit}{''.join(random.choices(string.ascii_uppercase + string.digits, k=4))}"
-    block3 = f"{third_digit}{''.join(random.choices(string.ascii_uppercase + string.digits, k=4))}"
+    block1 = f"{first_digit}{''.join(random.choices(string.ascii_uppercase
+            + string.digits, k=4))}"
+    block2 = f"{second_digit}{''.join(random.choices(string.ascii_uppercase
+            + string.digits, k=4))}"
+    block3 = f"{third_digit}{''.join(random.choices(string.ascii_uppercase
+            + string.digits, k=4))}"
 
     key = f"{block1}-{block2}-{block3} {last_two_digits}"
 
@@ -49,19 +52,22 @@ background_image = PhotoImage(file="background.png")
 background_label = tk.Label(root, image=background_image)
 background_label.place(relwidth=1, relheight=1)
 
-input_label = tk.Label(root, text="Введите HEX число:", font=("Arial", 12), bg="#ddeeff")
+input_label = tk.Label(root, text="Введите HEX число:",
+            font=("Arial", 12), bg="#ddeeff")
 input_label.place(x=20, y=20)
 
 input_field = tk.Entry(root, font=("Arial", 12), width=30)
 input_field.place(x=20, y=50)
 
-key_label = tk.Label(root, text="Сгенерированный ключ:", font=("Arial", 12), bg="#ddeeff")
+key_label = tk.Label(root, text="Сгенерированный ключ:",
+            font=("Arial", 12), bg="#ddeeff")
 key_label.place(x=20, y=100)
 
 key_field = tk.Entry(root, font=("Arial", 12), width=30)
 key_field.place(x=20, y=130)
 
-generate_button = tk.Button(root, text="Генерировать ключ", font=("Arial", 12), command=generate_key, bg="#ddeeff")
+generate_button = tk.Button(root, text="Генерировать ключ",
+                font=("Arial", 12), command=generate_key, bg="#ddeeff")
 generate_button.place(x=20, y=180)
 
 animate()
