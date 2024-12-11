@@ -21,12 +21,12 @@ def generate_key():
     third_digit = dec_str[2]
     last_two_digits = dec_str[-2:]
 
-    block1 = f"{first_digit}{''.join(random.choices(string.ascii_uppercase
-            + string.digits, k=4))}"
-    block2 = f"{second_digit}{''.join(random.choices(string.ascii_uppercase
-            + string.digits, k=4))}"
-    block3 = f"{third_digit}{''.join(random.choices(string.ascii_uppercase
-            + string.digits, k=4))}"
+    block1 = (f"{first_digit}"
+    f"{''.join(random.choices(string.ascii_uppercase + string.digits, k=4))}")
+    block2 = (f"{second_digit}"
+    f"{''.join(random.choices(string.ascii_uppercase + string.digits, k=4))}")
+    block3 = (f"{third_digit}"
+    f"{''.join(random.choices(string.ascii_uppercase + string.digits, k=4))}")
 
     key = f"{block1}-{block2}-{block3} {last_two_digits}"
 
